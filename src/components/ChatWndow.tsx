@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Message } from '../types/message';
 import { MessageList } from './MessageList';
 import { MessageInput } from './MessageInput';
-import './ChatWindow.css';
 
 export const ChatWindow: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);

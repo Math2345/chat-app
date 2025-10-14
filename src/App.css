@@ -1,108 +1,135 @@
 .chat-container {
-  max-width: 420px;
-  height: 600px;
+  max-width: 500px;
+  height: 650px;
   margin: 50px auto;
-  border-radius: 16px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  background: #f9f9f9;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background: #e5ddd5;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   font-family: "Inter", sans-serif;
 }
 
 .chat-title {
   text-align: center;
+  padding: 16px;
+  margin: 0;
   background: #0078ff;
   color: white;
-  margin: 0;
-  padding: 16px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
-  letter-spacing: 0.5px;
 }
 
-.chat-box {
+.message-list {
   flex: 1;
-  padding: 15px;
+  padding: 12px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  background: #e9eef5;
+  gap: 12px;
 }
 
-.no-messages {
+.empty {
   text-align: center;
-  color: #777;
+  color: #999;
   margin-top: 30%;
 }
 
+/* Сообщение */
 .message {
-  padding: 10px 14px;
-  border-radius: 12px;
-  max-width: 80%;
-  font-size: 15px;
-  word-wrap: break-word;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
   animation: fadeIn 0.2s ease-in;
 }
 
+/* Аватар */
+.message .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+/* Пузырьки */
+.bubble {
+  padding: 10px 14px;
+  border-radius: 18px;
+  max-width: 70%;
+  font-size: 14px;
+  position: relative;
+  word-wrap: break-word;
+  background: #fff;
+}
+
+/* Сообщения пользователя */
 .message.user {
-  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message.user .bubble {
   background: #0078ff;
   color: white;
-  border-bottom-right-radius: 2px;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 18px;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
 }
 
-.message.bot {
-  align-self: flex-start;
+/* Сообщения бота */
+.message.bot .bubble {
   background: #ffffff;
   color: #333;
-  border-bottom-left-radius: 2px;
 }
 
-.input-box {
+/* Время */
+.time {
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+  align-self: flex-end;
+}
+
+/* Input */
+.input-container {
   display: flex;
-  padding: 10px;
-  background: #fff;
+  padding: 12px;
+  gap: 10px;
+  background: #f7f7f7;
   border-top: 1px solid #ddd;
-  gap: 8px;
 }
 
-.chat-input {
+.input-container input {
   flex: 1;
+  padding: 12px 16px;
+  border-radius: 24px;
   border: 1px solid #ccc;
-  border-radius: 20px;
-  padding: 10px 14px;
   outline: none;
-  font-size: 14px;
+  font-size: 15px;
   transition: border 0.2s;
 }
 
-.chat-input:focus {
+.input-container input:focus {
   border-color: #0078ff;
 }
 
-.send-button {
+.input-container button {
   border: none;
   background: #0078ff;
   color: white;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: 0.2s;
 }
 
-.send-button:hover {
-  background: #0065d4;
+.input-container button:hover {
+  background: #005fcc;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(5px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
